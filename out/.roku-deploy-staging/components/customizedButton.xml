@@ -1,0 +1,16 @@
+<?xml version = "1.0" encoding = "utf-8" ?> 
+
+<component name = "CustomizedButton" extends = "Group">
+    
+    <script type="text/brightscript" uri="customizedButton.brs" /> 
+
+<children >
+     <Poster
+        id="posterOk"
+        width="108  "	
+        height="115"
+        translation = "[885,915]"
+        opacity="0.8"
+        uri="pkg:/images/button.png"/>
+</children>
+</component>
