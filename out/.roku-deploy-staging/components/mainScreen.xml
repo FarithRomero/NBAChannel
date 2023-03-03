@@ -8,105 +8,122 @@
     <script type="text/brightscript" uri="mainScreen.brs" /> 
 
     <children>
-    <Group
-        id="enterScreen"
-        visible="true">
+        <Group
+            id="enterScreen"
+            visible="true">
+            <Poster
+                id="playerPoster"
+                translation="[-160,205]"
+                height="900"
+                opacity="1"
+                width="800" 
+                uri="pkg:/images/NBAPicture3.png" 
+                visible="true" />
+            <Timer
+                id="startTimer"
+                repeat="true"
+                duration="2"/>
+            <Label
+                id="startTimerLabel"
+                width = "700"
+                height="80"
+                translation = "[600,300]"
+                horizAlign = "center"
+                vertAlign = "center"/>
+            <Rectangle
+                id="keyBoardBackGround"
+                color="0x000000"
+                opacity="0.9"
+                width="1379"
+                height="436"
+                translation="[321,449]"
+                visible="false"/>
+            <CustomizedKeyboard id = "TypeKeyboard" />
+            <CustomizedButton id = "okButton" visible= "false" />
+        </Group>
+        <Group
+            id="firstSceen" >
         <Poster
             id="playerPoster"
-            translation="[-160,205]"
-            height="900"
-            opacity="1"
-            width="800" 
-            uri="pkg:/images/NBAPicture3.png" 
-            visible="true" />
-        <CustomizedKeyboard id = "TypeKeyboard" />
-        <CustomizedButton id = "okButton" visible= "false" />
-    </Group>
-    <Group
-        id="firstSceen" >
-    <Poster
-        id="playerPoster"
-        translation="[-60,610]"
-        height="500"
-        width="500" 
-        uri="pkg:/images/NBAPicture.png"
-        visible="true"  />
-    <Label
-        id="msWelcome"
-        height="50" 
-        color="0xE7F6F2"
-        translation="[190,230]" 
-        font = "font:SmallestSystemFont"/>
-    <CustomizedRowlist
-        id="usersProfiles"
-        itemComponentName = "usersItemComponent"
-        itemSize="[1650, 450]"
-        numRows="1"
-        rowItemSize="[[380,250]]"
-        rowItemSpacing="[[40,0]]"
-        translation="[160,400]" 
-        focusBitmapUri= "pkg:/images/focus_grid.9.png"
-        visible="true"/>        
-    </Group>  
-    <Video
-        id="exampleVideo"
-        width="1920"
-        height="1080"
-        visible = "false"/>
-    <Group
-        id="dataUserScreen" >
-        <Poster    
-            id="playerPosterThree"
-            translation="[1300,550]"
-            height="850"
-            opacity="1"
-            width="800" 
-            uri="pkg:/images/NBAPictureTwo.png" 
-            visible="true" />
+            translation="[-60,610]"
+            height="500"
+            width="500" 
+            uri="pkg:/images/NBAPicture.png"
+            visible="true"  />
         <Label
-            id="userDataName"
-            height="70"
-            color="0xEB455F"
-            translation="[280,150]" 
-            font="font:LargeBoldSystemFont" />
-        <LayoutGroup
-            layoutDirection="vert"
-            vertAlignment="center"
-            horizAlignment= "center"
-            itemSpacings="[50]"
-            translation="[1000,550]" >
-            <Poster
-                id="posterDataUser"
-                uri=""
-                width="550"
-                height="400">
-            </Poster>        
+            id="msWelcome"
+            height="50" 
+            color="0xE7F6F2"
+            translation="[190,230]" 
+            font = "font:SmallestSystemFont"/>
+        <CustomizedRowlist
+            id="usersProfiles"
+            itemComponentName = "usersItemComponent"
+            itemSize="[1650, 450]"
+            numRows="1"
+            rowItemSize="[[380,250]]"
+            rowItemSpacing="[[40,0]]"
+            translation="[160,400]" 
+            focusBitmapUri= "pkg:/images/focus_grid.9.png"
+            visible="true"/>        
+        </Group>  
+        <Video
+            id="exampleVideo"
+            width="1920"
+            height="1080"
+            visible = "false"/>
+        <Group
+            id="dataUserScreen" >
+            <Poster    
+                id="playerPosterThree"
+                translation="[1300,550]"
+                height="850"
+                opacity="1"
+                width="800" 
+                uri="pkg:/images/NBAPictureTwo.png" 
+                visible="true" />
             <Label
-                id="TeamsData"
-                height="0"
-                width="920"
-                numLines="4"
-                lineSpacing="10"
-                color="0xE5E5CB"
-                wrap="true"
-                horizAlign = "center"
-                vertAlign = "center"
-                font = "font:LargeBoldSystemFont" />
-            <Label
-                text="Press BACK to return"
-                font="font:SmallestSystemFont"
-                height="10"
-                color="0xEB455F"/>     
-        </LayoutGroup>      
-    </Group>    
-    
-    <Label
-        height="10"
-        color="0x2B3467"
-        text="Demo chanel created by Farith Romero"
-        translation="[1300,1000]" 
-        font = "font:SmallestSystemFont"
-        visible="true"/>
-    
+                id="userDataName"
+                height="70"
+                color="0xEB455F"
+                translation="[280,150]" 
+                font="font:LargeBoldSystemFont" />
+            <LayoutGroup
+                layoutDirection="vert"
+                vertAlignment="center"
+                horizAlignment= "center"
+                itemSpacings="[50]"
+                translation="[1000,550]" >
+                <Poster
+                    id="posterDataUser"
+                    uri=""
+                    width="550"
+                    height="400">
+                </Poster>        
+                <Label
+                    id="TeamsData"
+                    height="0"
+                    width="920"
+                    numLines="4"
+                    lineSpacing="10"
+                    color="0xE5E5CB"
+                    wrap="true"
+                    horizAlign = "center"
+                    vertAlign = "center"
+                    font = "font:LargeBoldSystemFont" />
+                <Label
+                    text="Press BACK to return"
+                    font="font:SmallestSystemFont"
+                    height="10"
+                    color="0xEB455F"/>     
+            </LayoutGroup>      
+        </Group>    
+        <Label
+            height="10"
+            color="0xFFF8EA"
+            text="Demo chanel created by Farith Romero"
+            translation="[1300,1000]" 
+            font = "font:SmallestSystemFont"
+            visible="true"/>
     </children>
 </component>

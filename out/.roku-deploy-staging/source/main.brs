@@ -1,4 +1,3 @@
-
 sub Main()
     print "in showChannelSGScreen"
     screen = CreateObject("roSGScreen")

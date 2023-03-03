@@ -7,12 +7,13 @@ sub init()
     m.top.textEditBox.hintText = "Type your name to start" 
     m.top.textEditBox.clearOnDownKey="false"
     m.keyboard = m.top.getChild(1)
-    m.keyboard.visible=false
+    m.keyboard.visible = false
     m.keyboard.observeField("focusedChild", "showPad")
 end sub
 
 sub showPad()
-    m.keyboard.visible=true 
+    m.keyboard.visible = true 
+    m.top.showRectangle = m.keyboard.visible
 end sub
 
 function onKeyEvent(key as String, press as Boolean) as Boolean
@@ -24,6 +25,7 @@ function onKeyEvent(key as String, press as Boolean) as Boolean
             else if key = "back"
                 m.top.textEditBox.setFocus(true)
                 m.keyboard.visible=false
+                m.top.showRectangle = m.keyboard.visible
                 handled = true 
             end if
         end if

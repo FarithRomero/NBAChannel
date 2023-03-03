@@ -4,29 +4,41 @@ sub init()
   m.playerPoster = m.top.findNode("playerPoster")
   m.keyboard = m.top.findNode("TypeKeyboard")
   m.okButton = m.top.findNode("okButton")
-
-  m.msWelcome = m.top.findNode("msWelcome")
-
-  m.keyboard.textEditBox.observeField("text", "onTextFieldChange")
-
+  m.keyboardBackGround = m.top.findNode("keyboardBackGround")
+  m.msWelcome = m.top.findNode("msWelcome") 
   m.enterScreen = m.top.findNode("enterScreen")
   m.firstSceen = m.top.findNode("firstSceen")
-  
   m.customizedRowlist = m.top.findNode("usersProfiles")
-  
   m.secondScreen = m.top.findNode("dataUserScreen")
   m.userDataName = m.top.findNode("userDataName")
   m.posterDataUser = m.top.findNode("posterDataUser")
   m.msWelcome = m.top.findNode("msWelcome")
   m.TeamsData = m.top.findNode("TeamsData")
   m.video = m.top.findNode("exampleVideo")
-  
+
+  m.keyboard.textEditBox.observeField("text", "onTextFieldChange")
+  m.keyboard.observeField("showRectangle", "onVisibleKeyboardChange")
   m.customizedRowlist.observeField("rowItemSelected", "displaySecondScreen")
+
   m.firstSceen.visible = false
   m.secondScreen.visible = false
+
+  m.startTimer = m.top.findNode("startTimer")
+  m.startTimer.control = "start"
+  m.initialStartTimerText = "Alert!"
+  m.finalStartTimertext = "This is a sample Roku Chanel non-profit."
+  m.startTimerLabel = m.top.FindNode("startTimerLabel")
+  m.startTimerLabel.text = m.initialStartTimerText 
+  m.textchange = false
+  m.startTimer.ObserveField("fire","changetext")
   
+  onVisibleKeyboardChange()
   onTextFieldChange()
   createUserContentTask()
+end sub
+
+sub onVisibleKeyboardChange()
+    m.keyboardBackGround.visible = m.keyboard.showRectangle
 end sub
 
 sub onTextFieldChange()
@@ -88,17 +100,17 @@ end function
 
 function onMainScreenResume(arg as dynamic)
   for each key in arg
-    print "***** Resuming Channel *****" key "=" arg[key]
-end for
+      print "***** Resuming Channel *****" key "=" arg[key]
+  end for
 
-if arg.launchParams <> invalid
+  if arg.launchParams <> invalid
   launchParams = arg.launchParams
-  if(launchParams.mediaType <> invalid) and (launchParams.contentId <> invalid)
-    print "Deep Link  Media Player"
-  end if
-end if 
-myScene = m.top.getScene()
-myScene.signalBeacon("AppResumeComplete")
+    if(launchParams.mediaType <> invalid) and (launchParams.contentId <> invalid)
+      print "Deep Link  Media Player"
+    end if
+  end if 
+  myScene = m.top.getScene()
+  myScene.signalBeacon("AppResumeComplete")
 end function
 
 function onKeyEvent(key as String, press as Boolean) as Boolean
@@ -116,7 +128,7 @@ function onKeyEvent(key as String, press as Boolean) as Boolean
       else if (key = "OK" )
           if m.top.hasFocus()
             m.keyboard.setFocus(true)
-            m.okButton.visible = true
+              m.okButton.visible = true
             handled=true
           else if m.okButton.hasFocus()
             m.enterScreen.visible = false
@@ -150,3 +162,14 @@ function onKeyEvent(key as String, press as Boolean) as Boolean
     end if
   return handled
 end function
+
+
+sub changetext()
+  if (m.textchange = false) then
+    m.startTimerLabel.text = m.finalStartTimertext
+    m.textchange = true
+   else
+     m.startTimerLabel.text = m.initialStartTimerText
+     m.textchange = false
+   end if
+end sub

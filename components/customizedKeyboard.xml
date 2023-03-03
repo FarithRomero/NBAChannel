@@ -2,6 +2,10 @@
 
 <component name = "CustomizedKeyboard" extends = "Keyboard" >
 
+<interface>
+    <field id="showRectangle" type="boolean" />
+</interface>
+
 <script type="text/brightscript" uri="customizedKeyboard.brs" /> 
 
 <children >
