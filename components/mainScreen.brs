@@ -94,7 +94,7 @@ end for
 if arg.launchParams <> invalid
   launchParams = arg.launchParams
   if(launchParams.mediaType <> invalid) and (launchParams.contentId <> invalid)
-    print "Deep Link  Media  "
+    print "Deep Link  Media Player"
   end if
 end if 
 myScene = m.top.getScene()
