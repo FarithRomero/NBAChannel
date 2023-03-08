@@ -138,7 +138,7 @@ function onKeyEvent(key as String, press as Boolean) as Boolean
             m.customizedRowlist.content = m.userContentTask.output
             m.customizedRowlist.setFocus(true)
             m.userName = m.keyboard.textEditBox.text
-            m.msWelcome.text = "Welcome " + m.userName + " click on your favorite NBA team image to see a video or click on Ball to know its information:"
+            m.msWelcome.text = "Welcome " + m.userName 
           end if
       else if (key = "back")
         if (m.video.hasFocus())

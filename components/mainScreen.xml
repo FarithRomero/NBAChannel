@@ -52,9 +52,19 @@
             visible="true"  />
         <Label
             id="msWelcome"
-            height="50" 
+            height="100" 
+            width="400"
+            horizAlign="center"
+            vertAlign="center"
             color="0xE7F6F2"
-            translation="[190,230]" 
+            translation="[800,130]" 
+            font = "font:LargeBoldSystemFont"/>
+        <Label
+            id="msIntruction"
+            height="50" 
+            text="Click on your favorite NBA team image to see a video or click on Ball to know its information!"
+            color="0xE7F6F2"
+            translation="[350,250]" 
             font = "font:SmallestSystemFont"/>
         <CustomizedRowlist
             id="usersProfiles"
@@ -111,11 +121,10 @@
                     horizAlign = "center"
                     vertAlign = "center"
                     font = "font:LargeBoldSystemFont" />
-                <Label
-                    text="Press BACK to return"
-                    font="font:SmallestSystemFont"
-                    height="10"
-                    color="0xEB455F"/>     
+                <CustomizedButton 
+                    textButton="Press back" 
+                    positionText="[35,26]"
+                    translation = "[0,0]"/>    
             </LayoutGroup>      
         </Group>    
         <Label
@@ -124,6 +133,6 @@
             text="Demo chanel created by Farith Romero"
             translation="[1300,1000]" 
             font = "font:SmallestSystemFont"
-            visible="true"/>
+            visible="false"/>
     </children>
 </component>
