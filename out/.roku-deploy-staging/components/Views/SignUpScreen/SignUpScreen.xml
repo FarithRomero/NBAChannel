@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="SignUpScreen" extends="Group">
+    <interface>
+    </interface>
+    <script type="text/brightscript" uri="SignUpScreen.brs" />
+    <script type="text/brightscript" uri="pkg:/source/bslib.brs" />
+    <children>
+        <Poster id="welcomeLogo" translation="[14, 86]" width="950" height="800" uri="pkg:/images/welcomeLogo.png" />
+        <Poster id="welcomePoster" width="1018" translation="[962,0]" uri="pkg:/images/welcomePoster2.png" />
+        <Poster id="leftGradiant" width="100" translation="[948,0]" uri="pkg:/images/sideGradiant.png" />
+        <Label id="title" translation="[100, 750]" text="CREATE YOUR ACCOUNT AND ENJOY OUR CONTENT" color="#FFFFFF">
+            <Font role="font" uri="pkg:/fonts/Oswald-Bold.ttf" size="40" />
+        </Label>
+    </children>
+</component>
+<!--//# sourceMappingURL=./SignUpScreen.xml.map -->

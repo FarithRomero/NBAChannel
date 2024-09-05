@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<component name="BaseView" extends="Group">
+
+    <interface>
+        <field id="viewData" type="assocarray" onChange="onViewDataChange"/>
+        <field id="viewId" type="string"/>
+    </interface>
+
+    <script type="text/brightscript" uri="BaseView.bs" />
+    <children >
+        <Rectangle
+            id="backGroundPoster"
+            translation="[0,0]"
+            color="0x000000"
+            height="1080"
+            width="1920" />
+    </children>
+</component>

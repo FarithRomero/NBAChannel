@@ -1,0 +1,20 @@
+{
+    "rootDir": ".",
+    "stagingDir": "dist",
+    "retainStagingDir": true,
+    "createPackage": false,
+    "sourceMap": true,
+    "allowBrighterScriptInBrightScript": true,
+    "diagnosticFilters": [
+        {
+            "src": "**/*"
+        }
+    ],
+    "files": [
+        "components/**/*.*",
+        "fonts/**/*.*",
+        "images/**/*.*",
+        "source/**/*.*",
+        "manifest"
+    ]
+}

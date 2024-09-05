@@ -4,33 +4,35 @@
 
     <customization suspendhandler="onMainScreenSuspend" />
     <customization resumehandler="onMainScreenResume" />
-    
-    <script type="text/brightscript" uri="mainScreen.brs" /> 
+
+    <script type="text/brightscript" uri="mainScreen.brs" />
 
     <children>
-        <Group
+     <SignUpScreen />
+        <!-- <Group
             id="enterScreen"
-            visible="true">
+            visible="true"> -->
+
+
+<!-- 
             <Poster
                 id="playerPoster"
-                translation="[-160,205]"
-                height="900"
-                opacity="1"
-                width="800" 
-                uri="pkg:/images/NBAPicture3.png" 
-                visible="true" />
-            <Timer
+                translation="[0,0]"
+                width="1920"
+                uri="pkg:/images/welcomeBackground.png"
+                visible="true" /> -->
+            <!-- <Timer
                 id="startTimer"
                 repeat="true"
-                duration="2"/>
-            <Label
+                duration="2"/> -->
+            <!-- <Label
                 id="startTimerLabel"
                 width = "700"
                 height="80"
                 translation = "[600,300]"
                 horizAlign = "center"
-                vertAlign = "center"/>
-            <Rectangle
+                vertAlign = "center"/> -->
+            <!-- <Rectangle
                 id="keyBoardBackGround"
                 color="0x000000"
                 opacity="0.9"
@@ -39,32 +41,32 @@
                 translation="[321,449]"
                 visible="false"/>
             <CustomizedKeyboard id = "TypeKeyboard" />
-            <CustomizedButton id = "okButton" visible= "false" />
-        </Group>
-        <Group
+            <CustomizedButton id = "okButton" visible= "false" /> -->
+        <!-- </Group> -->
+        <!-- <Group
             id="firstSceen" >
         <Poster
             id="playerPoster"
             translation="[-60,610]"
             height="500"
-            width="500" 
+            width="500"
             uri="pkg:/images/NBAPicture.png"
             visible="true"  />
         <Label
             id="msWelcome"
-            height="100" 
+            height="100"
             width="400"
             horizAlign="center"
             vertAlign="center"
             color="0xE7F6F2"
-            translation="[800,130]" 
+            translation="[800,130]"
             font = "font:LargeBoldSystemFont"/>
         <Label
             id="msIntruction"
-            height="50" 
+            height="50"
             text="Click on your favorite NBA team image to see a video or click on Ball to know its information!"
             color="0xE7F6F2"
-            translation="[350,250]" 
+            translation="[350,250]"
             font = "font:SmallestSystemFont"/>
         <CustomizedRowlist
             id="usersProfiles"
@@ -73,10 +75,10 @@
             numRows="1"
             rowItemSize="[[380,250]]"
             rowItemSpacing="[[40,0]]"
-            translation="[160,400]" 
+            translation="[160,400]"
             focusBitmapUri= "pkg:/images/focus_grid.9.png"
-            visible="true"/>        
-        </Group>  
+            visible="true"/>
+        </Group>
         <Video
             id="exampleVideo"
             width="1920"
@@ -84,19 +86,19 @@
             visible = "false"/>
         <Group
             id="dataUserScreen" >
-            <Poster    
+            <Poster
                 id="playerPosterThree"
                 translation="[1300,550]"
                 height="850"
                 opacity="1"
-                width="800" 
-                uri="pkg:/images/NBAPictureTwo.png" 
+                width="800"
+                uri="pkg:/images/NBAPictureTwo.png"
                 visible="true" />
             <Label
                 id="userDataName"
                 height="70"
                 color="0xEB455F"
-                translation="[280,150]" 
+                translation="[280,150]"
                 font="font:LargeBoldSystemFont" />
             <LayoutGroup
                 layoutDirection="vert"
@@ -109,7 +111,7 @@
                     uri=""
                     width="550"
                     height="400">
-                </Poster>        
+                </Poster>
                 <Label
                     id="TeamsData"
                     height="0"
@@ -121,18 +123,18 @@
                     horizAlign = "center"
                     vertAlign = "center"
                     font = "font:LargeBoldSystemFont" />
-                <CustomizedButton 
-                    textButton="Press back" 
+                <CustomizedButton
+                    textButton="Press back"
                     positionText="[35,26]"
-                    translation = "[0,0]"/>    
-            </LayoutGroup>      
-        </Group>    
+                    translation = "[0,0]"/>
+            </LayoutGroup>
+        </Group>
         <Label
             height="10"
             color="0xFFF8EA"
             text="Demo chanel created by Farith Romero"
-            translation="[1300,1000]" 
+            translation="[1300,1000]"
             font = "font:SmallestSystemFont"
-            visible="false"/>
+            visible="false"/> -->
     </children>
 </component>
