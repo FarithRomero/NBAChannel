@@ -8,7 +8,6 @@
     <script type="text/brightscript" uri="mainScreen.brs" />
 
     <children>
-     <SignUpScreen />
         <!-- <Group
             id="enterScreen"
             visible="true"> -->
@@ -136,5 +135,10 @@
             translation="[1300,1000]"
             font = "font:SmallestSystemFont"
             visible="false"/> -->
+        <BusySpinner
+            id = "loadingIndicator"
+            spinInterval="3"
+            visible = "true"
+            translation="[900, 490]" />
     </children>
 </component>

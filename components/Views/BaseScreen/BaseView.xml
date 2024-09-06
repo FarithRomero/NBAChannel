@@ -8,6 +8,8 @@
     </interface>
 
     <script type="text/brightscript" uri="BaseView.bs" />
+    <script type="text/brightscript" uri="pkg:/source/imageUtils.bs" />
+
     <children >
         <Rectangle
             id="backGroundPoster"

@@ -3,7 +3,7 @@
     <script type="text/brightscript" uri="mainScreen.brs" />
     <script type="text/brightscript" uri="pkg:/source/bslib.brs" />
     <children>
-        <SignUpScreen />
+        <BusySpinner id="loadingIndicator" spinInterval="3" visible="true" translation="[900, 490]" />
     </children>
     <customization suspendhandler="onMainScreenSuspend" />
     <customization resumehandler="onMainScreenResume" />

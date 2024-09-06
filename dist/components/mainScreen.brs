@@ -1,11 +1,14 @@
 sub init()
     m.top.setFocus(true)
+    bindVariables()
+    bindStyles()
+    setViews()
     ' m.channelPoster = m.top.findNode("channelPoster")
     ' m.playerPoster = m.top.findNode("playerPoster")
     ' ' m.keyboard = m.top.findNode("TypeKeyboard")
     ' m.okButton = m.top.findNode("okButton")
     ' ' m.keyboardBackGround = m.top.findNode("keyboardBackGround")
-    ' m.msWelcome = m.top.findNode("msWelcome") 
+    ' m.msWelcome = m.top.findNode("msWelcome")
     ' m.enterScreen = m.top.findNode("enterScreen")
     ' m.firstSceen = m.top.findNode("firstSceen")
     ' m.customizedRowlist = m.top.findNode("usersProfiles")
@@ -31,6 +34,27 @@ sub init()
     ' onVisibleKeyboardChange()
     ' onTextFieldChange()
     ' createUserContentTask()
+end sub
+
+sub bindVariables()
+    m.loadingIndicator = m.top.findNode("loadingIndicator")
+end sub
+
+sub bindStyles()
+    m.loadingIndicator.poster.uri = "pkg:/images/spinner.png"
+    m.loadingIndicator.poster.blendcolor = "#942524"
+end sub
+
+sub setViews()
+    signUpScreen = m.top.createChild("SignUpScreen")
+    m.top.insertChild(signUpScreen, 1)
+    validateLoadStatus(signUpScreen)
+end sub
+
+sub validateLoadStatus(screen)
+    if screen.loadComplete = true then
+        m.loadingIndicator.visible = false
+    end if
 end sub
 ' sub onVisibleKeyboardChange()
 '     m.keyboardBackGround.visible = m.keyboard.showRectangle
@@ -116,7 +140,7 @@ end function
 '           '   m.keyboard.setFocus(true)
 '           '     m.okButton.visible = true
 '           '   handled=true
-'           ' else 
+'           ' else
 '           if m.okButton.hasFocus()
 '             m.enterScreen.visible = false
 '             m.channelPoster = invalid
@@ -125,7 +149,7 @@ end function
 '             m.customizedRowlist.content = m.userContentTask.output
 '             m.customizedRowlist.setFocus(true)
 '             m.userName = m.keyboard.textEditBox.text
-'             m.msWelcome.text = "Welcome " + m.userName 
+'             m.msWelcome.text = "Welcome " + m.userName
 '           end if
 '       else if (key = "back")
 '         if (m.video.hasFocus())

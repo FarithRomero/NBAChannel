@@ -1,0 +1,4 @@
+enum SignUpScreen
+    TITTLE = "CREATE YOUR ACCOUNT AND ENJOY OUR CONTENT"
+    TYC = "This channel just have academic porpuses and is non profit app"
+end enum
