@@ -51,10 +51,12 @@ sub bindStyles()
 end sub
 
 sub setViews()
-	signUpScreen = m.top.createChild("SignUpScreen")
-	m.top.insertChild(signUpScreen, 1)
+	screen = m.top.createChild("SignUpScreen")
+	screen.setFocus(true)
 
-	validateLoadStatus(signUpScreen)
+	m.top.insertChild(screen, 1)
+
+	validateLoadStatus(screen)
 end sub
 
 sub validateLoadStatus(screen)

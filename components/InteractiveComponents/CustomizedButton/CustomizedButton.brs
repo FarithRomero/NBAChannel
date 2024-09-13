@@ -19,8 +19,5 @@ sub bindObservers()
 end sub
 
 sub buttonFocused()
-	if m.top.hasfocus()
-		m.buttonBackground.blendColor = "0xFFFFFF"
-	end if
+	if m.top.hasfocus() then m.buttonBackground.uri = "pkg:/images/FocussedButton.png"
 end sub
-

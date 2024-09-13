@@ -4,6 +4,7 @@
     <interface>
         <field id="textButton" type="string" alias="buttonLabel.text" />
         <field id="buttonBackground" type="string" alias="buttonBackground.uri" />
+        <field id="isSelected" type="boolean"/>
     </interface>
 
     <script type="text/brightscript" uri="customizedButton.brs" />

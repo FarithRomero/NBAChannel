@@ -1,5 +1,5 @@
 sub init()
-    m.top.setFocus(true)
+    m.top.observeField("focusedChild", "focusHandler")
 
     bindVariables()
     bindStyles()
@@ -24,5 +24,7 @@ sub stopLoad()
 end sub
 
 sub focusHandler()
-    m.signUpButton.setFocus(true)
+    if m.top.hasFocus() then m.signUpButton.setFocus(true)
 end sub
+
+
