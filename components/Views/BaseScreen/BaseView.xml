@@ -3,8 +3,7 @@
 <component name="BaseView" extends="Group">
 
     <interface>
-        <field id="viewData" type="assocarray" onChange="onViewDataChange"/>
-        <field id="viewId" type="string"/>
+        <field id="loadCompleted" type="boolean" alwaysNotify="true"/>
     </interface>
 
     <script type="text/brightscript" uri="BaseView.bs" />

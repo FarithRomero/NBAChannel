@@ -1,9 +1,5 @@
 sub init()
-	m.top.setFocus(true)
-
 	bindVariables()
-	bindStyles()
-	setViews()
 	' m.channelPoster = m.top.findNode("channelPoster")
 	' m.playerPoster = m.top.findNode("playerPoster")
 	' ' m.keyboard = m.top.findNode("TypeKeyboard")
@@ -42,25 +38,35 @@ sub init()
 end sub
 
 sub bindVariables()
-	m.loadingIndicator = m.top.findNode("loadingIndicator")
+	m.loadSpinner = m.top.findNode("loadSpinner")
+
+	setGlobalComponents()
 end sub
 
-sub bindStyles()
-    m.loadingIndicator.poster.uri = "pkg:/images/spinner.png"
-    m.loadingIndicator.poster.blendcolor = "#942524"
+sub setGlobalComponents()
+	m.global.addField("viewSelected", "string", true)
+    m.global.observeField("viewSelected", "onViewSelected")
+
+	m.global.viewSelected = "SignUpScreen"
 end sub
 
-sub setViews()
-	screen = m.top.createChild("SignUpScreen")
-	screen.setFocus(true)
+sub onViewSelected(event as object)
+	viewSelected = event.getData()
 
-	m.top.insertChild(screen, 1)
+	screenSelector = m.top.createChild("ScreenSelector")
+	screenSelector.id = "ScreenSelector"
+	screenSelector.viewId = viewSelected
 
-	validateLoadStatus(screen)
+	screenSelector.setFocus(true)
+	m.top.insertChild(screenSelector, 1)
+
+	validateLoadStatus(screenSelector)
 end sub
 
-sub validateLoadStatus(screen)
- if screen.loadComplete = true then m.loadingIndicator.visible = false
+sub validateLoadStatus(screenSelector)
+	if screenSelector <> invalid
+		if screenSelector.loadCompleted = true then m.loadSpinner.isLoadCompleted = true
+	end if
 end sub
 ' sub onVisibleKeyboardChange()
 '     m.keyboardBackGround.visible = m.keyboard.showRectangle

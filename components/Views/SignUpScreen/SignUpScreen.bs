@@ -20,7 +20,7 @@ sub bindStyles()
 end sub
 
 sub stopLoad()
-    m.top.loadComplete = true
+    m.top.loadCompleted = true
 end sub
 
 sub focusHandler()

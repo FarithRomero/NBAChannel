@@ -1,0 +1,23 @@
+sub init()
+    bindVariables()
+    bindStyles()
+end sub
+
+sub bindVariables()
+    m.loadingIndicator = m.top.findNode("loadingIndicator")
+    m.backGroundSpinner = m.top.findNode("backGroundSpinner")
+end sub
+
+sub bindStyles()
+    m.loadingIndicator.poster.uri = "pkg:/images/spinner.png"
+    m.backGroundSpinner.uri= "pkg:/images/spinnerBackground.png"
+end sub
+
+sub onLoadCompleted(event as object)
+    isLoadCompleted = event.getData()
+
+    if isLoadCompleted = true then
+        m.loadingIndicator.visible = false
+        m.backGroundSpinner.visible = false
+    end if
+end sub

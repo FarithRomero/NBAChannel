@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<component name="CustomizedSpinner" extends="Group">
+
+    <interface>
+        <field id="isLoadCompleted" type="boolean" onChange="onLoadCompleted"/>
+    </interface>
+
+    <script type="text/brightscript" uri="CustomizedSpinner.bs" />
+    <script type="text/brightscript" uri="pkg:/source/imageUtils.bs" />
+
+    <children>
+        <Poster
+            id="backGroundSpinner"
+            translation="[919, 504]" />
+        <BusySpinner
+            id = "loadingIndicator"
+            spinInterval="2"
+            visible = "true"
+            translation="[900, 490]" />
+    </children>
+</component>

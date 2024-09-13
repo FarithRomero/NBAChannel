@@ -15,9 +15,32 @@ sub bindStyles()
 end sub
 
 sub bindObservers()
-	m.top.observeField("focusedChild", "buttonFocused")
+	m.top.observeField("focusedChild", "onButtonFocusedChange")
+	m.top.observeField("isSelected", "dispatchAction")
+	m.top.observeField("isFocused", "onButtonSelectedChange")
 end sub
 
-sub buttonFocused()
-	if m.top.hasfocus() then m.buttonBackground.uri = "pkg:/images/FocussedButton.png"
+sub onButtonFocusedChange()
+	if m.top.hasfocus() then m.top.isFocused = true
 end sub
+
+sub onButtonSelectedChange()
+	if m.top.isFocused = true then m.buttonBackground.uri = "pkg:/images/FocussedButton.png" else m.buttonBackground.uri = "pkg:/images/UnfocusedButton.png"
+end sub
+
+sub dispatchAction()
+	?"El boton ha sido seleccionado"
+end sub
+
+function onKeyEvent(key as String, press as Boolean) as Boolean
+	handled = false
+	if press then
+		if (key = "OK") then
+			if m.top.hasfocus()
+				m.top.isSelected = true
+			end if
+		end if
+		handled = true
+	end if
+	return handled
+end function

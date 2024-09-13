@@ -135,10 +135,7 @@
             translation="[1300,1000]"
             font = "font:SmallestSystemFont"
             visible="false"/> -->
-        <BusySpinner
-            id = "loadingIndicator"
-            spinInterval="3"
-            visible = "true"
-            translation="[900, 490]" />
+        <CustomizedSpinner
+            id="loadSpinner"/>
     </children>
 </component>

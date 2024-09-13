@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<component name="ScreenSelector" extends="Group">
+
+    <interface>
+        <field id="viewData" type="assocarray" onChange="onViewDataChange"/>
+        <field id="viewId" type="string" onChange="onViewIdChange"/>
+        <field id="loadCompleted" type="boolean"/>
+    </interface>
+
+    <script type="text/brightscript" uri="ScreenSelector.bs"/>
+
+    <children >
+    </children>
+</component>
