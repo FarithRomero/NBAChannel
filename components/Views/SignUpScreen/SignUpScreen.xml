@@ -6,7 +6,7 @@
     </interface>
 
     <script type="text/brightscript" uri="SignUpScreen.bs"/>
-    <script type="text/brightscript" uri="pkg:/source/copiesContainer.bs" />
+    <script type="text/brightscript" uri="pkg:/source/enumsContainer.bs" />
 
     <children>
         <Poster

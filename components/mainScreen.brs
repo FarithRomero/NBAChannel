@@ -34,6 +34,26 @@ sub validateLoadStatus(screenSelector)
 	end if
 end sub
 
+function onMainScreenSuspend (arg as dynamic)
+	for each key in arg
+		print "***** Suspending Channel *****" key "=" arg[key]
+	end for
+end function
+
+function onMainScreenResume(arg as dynamic)
+	for each key in arg
+			print "***** Resuming Channel *****" key "=" arg[key]
+	end for
+
+	if arg.launchParams <> invalid
+	launchParams = arg.launchParams
+		if(launchParams.mediaType <> invalid) and (launchParams.contentId <> invalid)
+			print "Deep Link  Media Player"
+		end if
+	end if
+	myScene = m.top.getScene()
+	myScene.signalBeacon("AppResumeComplete")
+end function
 
 ' sub onTextFieldChange()
 '   m.userName = m.keyboard.textEditBox.text
@@ -70,24 +90,3 @@ end sub
 '     m.video.visible = true
 '   end if
 ' end sub
-
-function onMainScreenSuspend (arg as dynamic)
-	for each key in arg
-		print "***** Suspending Channel *****" key "=" arg[key]
-	end for
-end function
-
-function onMainScreenResume(arg as dynamic)
-	for each key in arg
-			print "***** Resuming Channel *****" key "=" arg[key]
-	end for
-
-	if arg.launchParams <> invalid
-	launchParams = arg.launchParams
-		if(launchParams.mediaType <> invalid) and (launchParams.contentId <> invalid)
-			print "Deep Link  Media Player"
-		end if
-	end if
-	myScene = m.top.getScene()
-	myScene.signalBeacon("AppResumeComplete")
-end function

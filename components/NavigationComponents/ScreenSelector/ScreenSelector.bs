@@ -4,7 +4,6 @@ end sub
 sub onViewDataChange(event as object)
 end sub
 
-
 sub onViewIdChange(event as object)
     screenId = event.getData()
 	screen = m.top.createChild(screenId)
