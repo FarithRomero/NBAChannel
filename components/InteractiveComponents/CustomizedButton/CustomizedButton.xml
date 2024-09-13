@@ -3,6 +3,7 @@
 <component name = "CustomizedButton" extends = "Group">
     <interface>
         <field id="textButton" type="string" alias="buttonLabel.text" />
+        <field id="buttonBackground" type="string" alias="buttonBackground.uri" />
     </interface>
 
     <script type="text/brightscript" uri="customizedButton.brs" />
