@@ -5,68 +5,12 @@
     <customization suspendhandler="onMainScreenSuspend" />
     <customization resumehandler="onMainScreenResume" />
 
-    <script type="text/brightscript" uri="mainScreen.brs" />
+    <script type="text/brightscript" uri="MainScreen.brs" />
 
     <children>
-        <!-- <Group
-            id="enterScreen"
-            visible="true"> -->
-
-
-<!-- 
-            <Poster
-                id="playerPoster"
-                translation="[0,0]"
-                width="1920"
-                uri="pkg:/images/welcomeBackground.png"
-                visible="true" /> -->
-            <!-- <Timer
-                id="startTimer"
-                repeat="true"
-                duration="2"/> -->
-            <!-- <Label
-                id="startTimerLabel"
-                width = "700"
-                height="80"
-                translation = "[600,300]"
-                horizAlign = "center"
-                vertAlign = "center"/> -->
-            <!-- <Rectangle
-                id="keyBoardBackGround"
-                color="0x000000"
-                opacity="0.9"
-                width="1379"
-                height="436"
-                translation="[321,449]"
-                visible="false"/>
-            <CustomizedKeyboard id = "TypeKeyboard" />
-            <CustomizedButton id = "okButton" visible= "false" /> -->
-        <!-- </Group> -->
-        <!-- <Group
-            id="firstSceen" >
-        <Poster
-            id="playerPoster"
-            translation="[-60,610]"
-            height="500"
-            width="500"
-            uri="pkg:/images/NBAPicture.png"
-            visible="true"  />
-        <Label
-            id="msWelcome"
-            height="100"
-            width="400"
-            horizAlign="center"
-            vertAlign="center"
-            color="0xE7F6F2"
-            translation="[800,130]"
-            font = "font:LargeBoldSystemFont"/>
-        <Label
-            id="msIntruction"
-            height="50"
-            text="Click on your favorite NBA team image to see a video or click on Ball to know its information!"
-            color="0xE7F6F2"
-            translation="[350,250]"
-            font = "font:SmallestSystemFont"/>
+    <!--
+        <CustomizedKeyboard id = "TypeKeyboard" />
+        <CustomizedButton id = "okButton" visible= "false" />
         <CustomizedRowlist
             id="usersProfiles"
             itemComponentName = "usersItemComponent"
@@ -82,59 +26,7 @@
             id="exampleVideo"
             width="1920"
             height="1080"
-            visible = "false"/>
-        <Group
-            id="dataUserScreen" >
-            <Poster
-                id="playerPosterThree"
-                translation="[1300,550]"
-                height="850"
-                opacity="1"
-                width="800"
-                uri="pkg:/images/NBAPictureTwo.png"
-                visible="true" />
-            <Label
-                id="userDataName"
-                height="70"
-                color="0xEB455F"
-                translation="[280,150]"
-                font="font:LargeBoldSystemFont" />
-            <LayoutGroup
-                layoutDirection="vert"
-                vertAlignment="center"
-                horizAlignment= "center"
-                itemSpacings="[50]"
-                translation="[1000,550]" >
-                <Poster
-                    id="posterDataUser"
-                    uri=""
-                    width="550"
-                    height="400">
-                </Poster>
-                <Label
-                    id="TeamsData"
-                    height="0"
-                    width="920"
-                    numLines="4"
-                    lineSpacing="10"
-                    color="0xE5E5CB"
-                    wrap="true"
-                    horizAlign = "center"
-                    vertAlign = "center"
-                    font = "font:LargeBoldSystemFont" />
-                <CustomizedButton
-                    textButton="Press back"
-                    positionText="[35,26]"
-                    translation = "[0,0]"/>
-            </LayoutGroup>
-        </Group>
-        <Label
-            height="10"
-            color="0xFFF8EA"
-            text="Demo chanel created by Farith Romero"
-            translation="[1300,1000]"
-            font = "font:SmallestSystemFont"
-            visible="false"/> -->
+            visible = "false"/> -->
         <CustomizedSpinner
             id="loadSpinner"/>
     </children>
