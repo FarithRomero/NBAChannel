@@ -1,0 +1,15 @@
+node_modules
+*.zip
+.vscode/variables.env
+out/
+node_modules/
+dist/
+.DS_Store
+package-lock.json
+docker_build.sh
+BUILD_DETAILS
+archive.tar.gz
+# Ignorar archivos de configuración
+config.json
+*.log
+temp/

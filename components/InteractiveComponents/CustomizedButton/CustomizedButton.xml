@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<component name = "CustomizedButton" extends = "Group">
+    <interface>
+        <field id="textButton" type="string" alias="buttonLabel.text" />
+        <field id="buttonBackground" type="string" alias="buttonBackground.uri" />
+        <field id="isSelected" type="boolean"/>
+    </interface>
+
+    <script type="text/brightscript" uri="customizedButton.brs" />
+
+    <children>
+        <Poster
+            id="buttonBackground"
+            width="142"
+            height="48"
+            uri="pkg:/images/mediumButton.png">
+
+            <Label
+                id="buttonLabel"
+                color="0x000000"
+                vertAlign = "center"
+                horizAlign = "center" >
+                <Font
+                    role="font"
+                    uri="pkg:/fonts/Oswald-Bold.ttf"
+                    size="21" />
+            </Label>
+        </Poster>
+    </children>
+</component>

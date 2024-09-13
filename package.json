@@ -1,0 +1,23 @@
+{
+  "name": "nbachannel",
+  "version": "1.0.0",
+  "description": "I wish develop a testing channel to apply my new knowledge about programming",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FarithRomero/NBAChannel.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FarithRomero/NBAChannel/issues"
+  },
+  "homepage": "https://github.com/FarithRomero/NBAChannel#readme",
+  "devDependencies": {
+    "brighterscript": "^0.67.5"
+  }
+}

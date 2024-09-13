@@ -8,9 +8,17 @@
             "name": "BrightScript Debug: Launch",
             "type": "brightscript",
             "request": "launch",
-            "host": "${promptForHost}",
-            "password": "${promptForPassword}",
-            "rootDir": "${workspaceFolder}"
+            "host": "192.168.8.173",
+            "password": "nflp",
+            "rootDir": "${workspaceFolder}/dist",
+            "preLaunchTask": "build",
+            "files": [
+                "components/**/*.*",
+                "fonts/**/*.*",
+                "images/**/*.*",
+                "source/**/*.*",
+                "manifest"
+            ],
         }
     ]
 }

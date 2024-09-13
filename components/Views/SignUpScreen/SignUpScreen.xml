@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<component name="SignUpScreen" extends="Group">
+
+    <interface>
+        <field id="loadComplete" type="boolean"/>
+    </interface>
+
+    <script type="text/brightscript" uri="SignUpScreen.bs"/>
+    <script type="text/brightscript" uri="pkg:/source/copiesContainer.bs" />
+
+    <children>
+        <Poster
+            id="welcomeLogo"
+            translation="[61, 323]"
+            width="800"
+            height="300"
+            opacity="0.8"
+            uri="pkg:/images/welcomeLogo.png"/>
+        <Poster
+            id="welcomePoster"
+            width="1018"
+            translation="[962,0]"
+            uri="pkg:/images/welcomePoster2.png"/>
+        <Poster
+            id="leftGradiant"
+            width="100"
+            translation="[948,0]"
+            uri="pkg:/images/sideGradiant.png"/>
+        <Label
+            id="title"
+            translation="[100, 627]"
+            color="#FFFFFF" >
+            <Font
+                role="font"
+                uri="pkg:/fonts/Oswald-Regular.ttf"
+                size="40" />
+        </Label>
+        <CustomizedButton
+            id="signUpButton"
+            textButton="SIGN UP"
+            translation= "[100, 936]"/>
+        <CustomizedButton
+            id="skipButton"
+            textButton="SKIP FOR NOW"
+            translation= "[1731, 45]"/>
+        <Label
+            id="tyC"
+            translation="[100, 1000]"
+            color="#FFFFFF" >
+            <Font
+                role="font"
+                uri="pkg:/fonts/Oswald-Regular.ttf"
+                size="18" />
+    </children>
+</component>

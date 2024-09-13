@@ -1,0 +1,30 @@
+sub init()
+    m.top.observeField("focusedChild", "focusHandler")
+
+    bindVariables()
+    bindStyles()
+    focusHandler()
+end sub
+
+sub bindVariables()
+    m.title = m.top.findNode("title")
+    m.tyC = m.top.findNode("tyC")
+    m.signUpButton = m.top.findNode("signUpButton")
+    m.skipButton = m.top.findNode("skipButton")
+end sub
+
+sub bindStyles()
+    m.title.text = SignUpScreen.TITTLE
+    m.tyC.text = SignUpScreen.TYC
+    stopLoad()
+end sub
+
+sub stopLoad()
+    m.top.loadComplete = true
+end sub
+
+sub focusHandler()
+    if m.top.hasFocus() then m.signUpButton.setFocus(true)
+end sub
+
+
