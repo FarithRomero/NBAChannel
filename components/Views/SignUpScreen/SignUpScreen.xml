@@ -37,9 +37,11 @@
                 size="40" />
         </Label>
         <CustomizedButton
+            id="signUpButton"
             textButton="SIGN UP"
             translation= "[100, 936]"/>
         <CustomizedButton
+            id="skipButton"
             textButton="SKIP FOR NOW"
             translation= "[1731, 45]"/>
         <Label

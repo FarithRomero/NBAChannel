@@ -13,8 +13,8 @@
         <Label id="title" translation="[100, 627]" color="#FFFFFF">
             <Font role="font" uri="pkg:/fonts/Oswald-Regular.ttf" size="40" />
         </Label>
-        <CustomizedButton textButton="SIGN UP" translation="[100, 936]" />
-        <CustomizedButton textButton="SKIP FOR NOW" translation="[1731, 45]" />
+        <CustomizedButton id="signUpButton" textButton="SIGN UP" translation="[100, 936]" />
+        <CustomizedButton id="skipButton" textButton="SKIP FOR NOW" translation="[1731, 45]" />
         <Label id="tyC" translation="[100, 1000]" color="#FFFFFF">
             <Font role="font" uri="pkg:/fonts/Oswald-Regular.ttf" size="18" />
         </Label>

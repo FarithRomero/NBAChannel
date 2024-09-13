@@ -20,8 +20,7 @@ end sub
 
 sub  buttonFocused()
     if m.top.hasfocus()
-        m.buttonBackground.blendColor = "0x000000"
-        m.buttonLabel.color = "0x000000"
+        m.buttonBackground.blendColor = "0xFFFFFF"
     end if
 end sub
 
