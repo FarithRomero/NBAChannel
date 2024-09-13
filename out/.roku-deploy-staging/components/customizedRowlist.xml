@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<component name="CustomizedRowlist" extends="rowlist">
-    <script type="text/brightscript" uri="customizedRowlist.brs" />
-    <script type="text/brightscript" uri="pkg:/source/bslib.brs" />
-    <children />
-</component>
-<!--//# sourceMappingURL=./customizedRowlist.xml.map -->
