@@ -12,7 +12,7 @@ sub setGlobalComponents()
 	m.global.addField("viewSelected", "string", true)
     m.global.observeField("viewSelected", "onViewSelected")
 
-	m.global.viewSelected = "SignUpScreen"
+	m.global.viewSelected = ScreenNames.HOME
 end sub
 
 sub onViewSelected(event as object)

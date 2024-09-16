@@ -10,11 +10,5 @@
     <script type="text/brightscript" uri="pkg:/source/imageUtils.bs" />
 
     <children >
-        <Rectangle
-            id="backGroundPoster"
-            translation="[0,0]"
-            color="0x000000"
-            height="1080"
-            width="1920" />
     </children>
 </component>

@@ -1,0 +1,21 @@
+sub init()
+    bindVariables()
+    bindStyles()
+end sub
+
+sub bindVariables()
+    m.subscribeButton = m.top.findNode("subscribeButton")
+    m.subscriptionLabel = m.top.findNode("subscriptionLabel")
+    m.watchNowButton = m.top.findNode("watchNowButton")
+end sub
+
+sub bindStyles()
+    m.subscribeButton.textButton = HomeScreenCopies.SUBSCRIBE_BUTTON
+    m.subscriptionLabel.text = HomeScreenCopies.SUBSCRIPTION_LABEL
+    m.watchNowButton.textButton = HomeScreenCopies.WATCH_NOW
+    stopLoad()
+end sub
+
+sub stopLoad()
+    m.top.loadCompleted = true
+end sub

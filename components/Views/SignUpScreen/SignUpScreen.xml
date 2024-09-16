@@ -51,5 +51,6 @@
                 role="font"
                 uri="pkg:/fonts/Oswald-Regular.ttf"
                 size="18" />
+        </Label>
     </children>
 </component>

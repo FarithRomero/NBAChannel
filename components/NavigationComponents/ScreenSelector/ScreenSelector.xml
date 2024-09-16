@@ -11,5 +11,6 @@
     <script type="text/brightscript" uri="ScreenSelector.bs"/>
 
     <children >
+        <SideBar/>
     </children>
 </component>

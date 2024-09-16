@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<component name="HomeScreen" extends="BaseView">
+
+    <interface>
+    </interface>
+
+    <script type="text/brightscript" uri="HomeScreen.bs"/>
+    <script type="text/brightscript" uri="pkg:/source/enumsContainer.bs" />
+
+    <children>
+        <Poster
+            id="headerPoster"
+            translation="[163, 0]"
+            width="1757"
+            uri="pkg:/images/headerPoster.png"/>
+        <Poster
+            id="buttomGradient"
+            width="1758"
+            translation="[163,711]"
+            uri="pkg:/images/buttomGradient.png"/>
+        <LayoutGroup
+            id="homeButtonsLayout"
+            translation="[200,836]"
+            layoutDirection="horiz"
+            horizAlignment="lft"
+            itemSpacings="[40]">
+            <CustomizedButton
+                id="subscribeButton"/>
+            <CustomizedButton
+                id="watchNowButton"
+                buttonBackground="pkg:/images/FocussedButton.png"/>
+        </LayoutGroup>
+        <Label
+            id="subscriptionLabel"
+            translation="[200, 900]"
+            color="#FFFFFF" >
+            <Font
+                role="font"
+                uri="pkg:/fonts/Oswald-Regular.ttf"
+                size="18" />
+        </Label>
+    </children>
+</component>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<component name="SideBar" extends="BaseView">
+
+    <interface>
+    </interface>
+
+    <script type="text/brightscript" uri="SideBar.bs"/>
+    <script type="text/brightscript" uri="pkg:/source/enumsContainer.bs" />
+
+    <children>
+        <Rectangle
+            id="sideBarBackground"
+            width="163"
+            height="1080"
+            color="0x010101"
+            translation="[0,0]"/>
+        <Poster
+            id="homeLogoPoster"
+            width="70"
+            height="32"
+            uri="pkg:/images/sideBarLogo.png"
+            translation="[20, 22]"/>
+        <LayoutGroup
+            id="tabLogosLayout"
+            translation="[64,329]"
+            layoutDirection="vert"
+            horizAlignment="center"
+            itemSpacings="[161, 161, 267]">
+            <Poster
+                id="homeLogoPoster"
+                width="28"
+                uri="pkg:/images/homeLogoUnfocused.png"/>
+            <Poster
+                id="scheduleLogoPoster"
+                width="20"
+                uri="pkg:/images/scheduleLogoUnfocused.png"/>
+            <Poster
+                id="teamsLogoPoster"
+                width="20"
+                uri="pkg:/images/teamsLogoUnfocused.png"/>
+            <Poster
+                id="setingsLogoPoster"
+                width="20"
+                uri="pkg:/images/settingsLogoUnfocused.png"/>
+        </LayoutGroup>
+    </children>
+</component>
