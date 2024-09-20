@@ -1,21 +1,37 @@
 sub init()
     bindVariables()
-    bindStyles()
+    bindCopies()
+    createUserContentTask()
 end sub
 
 sub bindVariables()
-    m.subscribeButton = m.top.findNode("subscribeButton")
-    m.subscriptionLabel = m.top.findNode("subscriptionLabel")
+    m.homeHeaderText = m.top.findNode("homeHeaderText")
     m.watchNowButton = m.top.findNode("watchNowButton")
 end sub
 
-sub bindStyles()
-    m.subscribeButton.textButton = HomeScreenCopies.SUBSCRIBE_BUTTON
-    m.subscriptionLabel.text = HomeScreenCopies.SUBSCRIPTION_LABEL
+sub bindCopies()
+    m.homeHeaderText.text = HomeScreenCopies.HEADER_TEXT
     m.watchNowButton.textButton = HomeScreenCopies.WATCH_NOW
     stopLoad()
 end sub
 
 sub stopLoad()
     m.top.loadCompleted = true
+end sub
+
+sub createUserContentTask()
+    m.userContentTask = CreateObject("roSGNode", "usersContentTask")
+    m.userContentTask.url = "https://api-nba-v1.p.rapidapi.com/teams"
+    m.userContentTask.observeField("output", "onOutputChanged")
+    m.userContentTask.control = "RUN"
+end sub
+
+sub onOutputChanged()
+    m.teamsList = m.top.findNode("teamsList")
+	m.teamsList.content = m.userContentTask.output
+    m.teamsList.setFocus(true)
+    m.userContentTask.unobserveField("output")
+    m.userContentTask.control = "stop"
+    m.userContentTask = invalid
+  end if
 end sub

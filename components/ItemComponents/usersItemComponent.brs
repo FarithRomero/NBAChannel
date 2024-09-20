@@ -6,7 +6,7 @@ sub init()
 end sub
 
 sub onHeightChanged()
-    m.userProfile.width = m.top.width
+    m.userProfile.width = m.top.width / 1.2
     m.userProfile.height = m.top.height
 end sub
 

@@ -59,24 +59,6 @@ end function
 '   m.userName = m.keyboard.textEditBox.text
 ' end sub
 
-' sub createUserContentTask()
-'   m.userContentTask = CreateObject("roSGNode", "usersContentTask")
-'   m.userContentTask.url = "https://api-nba-v1.p.rapidapi.com/teams"
-'   m.userContentTask.observeField("output", "onOutputChanged")
-'   m.userContentTask.control = "RUN"
-' end sub
-
-' sub onOutputChanged()
-'   if (m.enterScreen.visible = true)
-'     m.customizedRowlist.content = invalid
-'   else m.customizedRowlist.content = m.userContentTask.output
-'     m.customizedRowlist.setFocus(true)
-'     m.userContentTask.unobserveField("output")
-'     m.userContentTask.control = "stop"
-'     m.userContentTask = invalid
-'   end if
-' end sub
-
 ' sub displayVideoOn()
 '   if m.itemContentSelected.displayVideo = true   then
 '     videoContent = createObject("RoSGNode", "ContentNode")

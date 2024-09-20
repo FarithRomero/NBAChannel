@@ -26,8 +26,8 @@
             <Poster 
                 id="dataUserProfile"
                 uri="pkg:/images/chooseProfile.png"
-                width="70"
-                height="50"
+                width="230"
+                height="130"
                 translation="[140, 370]"
                 opacity="0.3" />
         </Poster>

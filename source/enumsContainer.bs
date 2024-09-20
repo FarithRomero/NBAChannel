@@ -5,8 +5,8 @@ end enum
 
 enum HomeScreenCopies
     SUBSCRIBE_BUTTON = "SUBSCRIBE"
-    SUBSCRIPTION_LABEL = "Join to NBA channel and watch all exclusive content"
-    WATCH_NOW= "WATCH NOW"
+    HEADER_TEXT = "TOP 100 PLAYS OF 2023-24 NBA SEASON"
+    WATCH_NOW= "Watch Now"
 end enum
 
 enum ScreenNames

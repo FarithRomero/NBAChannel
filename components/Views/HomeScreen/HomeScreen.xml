@@ -13,32 +13,41 @@
             id="headerPoster"
             translation="[163, 0]"
             width="1757"
+            height="950"
             uri="pkg:/images/headerPoster.png"/>
         <Poster
             id="buttomGradient"
             width="1758"
-            translation="[163,711]"
+            translation="[163,840]"
             uri="pkg:/images/buttomGradient.png"/>
-        <LayoutGroup
-            id="homeButtonsLayout"
-            translation="[200,836]"
-            layoutDirection="horiz"
-            horizAlignment="lft"
-            itemSpacings="[40]">
-            <CustomizedButton
-                id="subscribeButton"/>
-            <CustomizedButton
-                id="watchNowButton"
-                buttonBackground="pkg:/images/FocussedButton.png"/>
-        </LayoutGroup>
+        <Poster
+            id="logoPoster"
+            width="81"
+             height="49"
+            uri="pkg:/images/sideBarLogo.png"
+            translation="[166, 22]"/>
         <Label
-            id="subscriptionLabel"
-            translation="[200, 900]"
+            id="homeHeaderText"
+            translation="[200, 650]"
             color="#FFFFFF" >
             <Font
                 role="font"
-                uri="pkg:/fonts/Oswald-Regular.ttf"
-                size="18" />
+                uri="pkg:/fonts/Oswald-Medium.ttf"
+                size="58" />
         </Label>
+        <CustomizedButton
+            id="watchNowButton"
+            translation="[200,740]"
+            buttonBackground="pkg:/images/FocussedButton.png"/>
+        <CustomizedRowlist
+            id="teamsList"
+            itemComponentName = "usersItemComponent"
+            itemSize="[1490, 130]"
+            numRows="1"
+            rowItemSize="[[230,130]]"
+            rowItemSpacing="[[180]]"
+            translation="[200,940]"
+            focusBitmapUri= "pkg:/images/focus_grid.9.png"
+            visible="true"/>
     </children>
 </component>

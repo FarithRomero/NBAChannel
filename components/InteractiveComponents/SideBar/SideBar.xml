@@ -11,37 +11,37 @@
     <children>
         <Rectangle
             id="sideBarBackground"
-            width="163"
+            width="143"
             height="1080"
-            color="0x010101"
+            color="0x02080D"
             translation="[0,0]"/>
-        <Poster
-            id="homeLogoPoster"
-            width="70"
-            height="32"
-            uri="pkg:/images/sideBarLogo.png"
-            translation="[20, 22]"/>
         <LayoutGroup
             id="tabLogosLayout"
-            translation="[64,329]"
             layoutDirection="vert"
             horizAlignment="center"
-            itemSpacings="[161, 161, 267]">
+            itemSpacings="[3, 100, 100, 100]">
             <Poster
                 id="homeLogoPoster"
                 width="28"
                 uri="pkg:/images/homeLogoUnfocused.png"/>
             <Poster
+                id="sideBar_logo_foused-line"
+                width="31"
+                uri="pkg:/images/sideBar_logo_foused-line.png"/>
+            <Poster
                 id="scheduleLogoPoster"
                 width="20"
+                opacity="0.5"
                 uri="pkg:/images/scheduleLogoUnfocused.png"/>
             <Poster
                 id="teamsLogoPoster"
                 width="20"
+                opacity="0.5"
                 uri="pkg:/images/teamsLogoUnfocused.png"/>
             <Poster
                 id="setingsLogoPoster"
                 width="20"
+                opacity="0.5"
                 uri="pkg:/images/settingsLogoUnfocused.png"/>
         </LayoutGroup>
     </children>

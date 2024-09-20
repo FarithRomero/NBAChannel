@@ -1,7 +1,7 @@
 sub init()
 end sub
 
-sub onViewDataChange(event as object)
+sub onViewDataChange()
 end sub
 
 sub onViewIdChange(event as object)

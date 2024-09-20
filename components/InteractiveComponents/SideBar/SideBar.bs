@@ -1,2 +1,15 @@
 sub init()
+    bindVariables()
+    bindSettings()
+end sub
+
+sub bindVariables()
+    m.sideBarBackground = m.top.findNode("sideBarBackground")
+    m.tabLogosLayout = m.top.findNode("tabLogosLayout")
+end sub
+
+sub bindSettings()
+    logosWidth = 20
+
+    m.tabLogosLayout.translation=[(m.sideBarBackground.width / 2) - (logosWidth / 2) ,329]
 end sub

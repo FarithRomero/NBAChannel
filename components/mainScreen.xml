@@ -10,19 +10,10 @@
 
     <children>
 
-    <!--
+    <!-- 
         <CustomizedKeyboard id = "TypeKeyboard" />
         <CustomizedButton id = "okButton" visible= "false" />
-        <CustomizedRowlist
-            id="usersProfiles"
-            itemComponentName = "usersItemComponent"
-            itemSize="[1650, 450]"
-            numRows="1"
-            rowItemSize="[[380,250]]"
-            rowItemSpacing="[[40,0]]"
-            translation="[160,400]"
-            focusBitmapUri= "pkg:/images/focus_grid.9.png"
-            visible="true"/>
+
         </Group>
         <Video
             id="exampleVideo"
