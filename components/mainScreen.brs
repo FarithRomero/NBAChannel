@@ -1,8 +1,15 @@
+import "pkg:/source/EnumsContainer.bs"
+import "pkg:/source/FocusHandler.bs"
+
 sub init()
 	bindVariables()
+	bindObservers()
+	initApp()
 end sub
 
 sub bindVariables()
+	m.top.focusRegistry = []
+
 	m.loadSpinner = m.top.findNode("loadSpinner")
 
 	setGlobalComponents()
@@ -10,9 +17,16 @@ end sub
 
 sub setGlobalComponents()
 	m.global.addField("viewSelected", "string", true)
-    m.global.observeField("viewSelected", "onViewSelected")
+	m.global.addField("focusRegistry", "array", true)
+	m.global.focusRegistry = ["MainScene"]
+end sub
 
+sub initApp()
 	m.global.viewSelected = ScreenNames.HOME
+end sub
+
+sub bindObservers()
+	m.global.observeField("viewSelected", "onViewSelected")
 end sub
 
 sub onViewSelected(event as object)
@@ -22,7 +36,8 @@ sub onViewSelected(event as object)
 	screenSelector.id = "ScreenSelector"
 	screenSelector.viewId = viewSelected
 
-	screenSelector.setFocus(true)
+	applyFocusTo(screenSelector, viewSelected)
+
 	m.top.insertChild(screenSelector, 1)
 
 	validateLoadStatus(screenSelector)
@@ -54,21 +69,3 @@ function onMainScreenResume(arg as dynamic)
 	myScene = m.top.getScene()
 	myScene.signalBeacon("AppResumeComplete")
 end function
-
-' sub onTextFieldChange()
-'   m.userName = m.keyboard.textEditBox.text
-' end sub
-
-' sub displayVideoOn()
-'   if m.itemContentSelected.displayVideo = true   then
-'     videoContent = createObject("RoSGNode", "ContentNode")
-'     videoContent.url = m.itemContentSelected.url
-'     videoContent.title = m.itemContentSelected.title
-'     videoContent.streamformat = "hls"
-
-'     m.video.content = videoContent
-'     m.video.control = "play"
-'     m.video.setFocus(true)
-'     m.video.visible = true
-'   end if
-' end sub

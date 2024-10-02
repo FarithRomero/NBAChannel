@@ -1,3 +1,5 @@
+import "pkg:/source/FocusHandler.bs"
+
 sub init()
     bindVariables()
     bindCopies()
@@ -29,7 +31,7 @@ end sub
 sub onOutputChanged()
     m.teamsList = m.top.findNode("teamsList")
 	m.teamsList.content = m.userContentTask.output
-    m.teamsList.setFocus(true)
+    applyFocusTo(m.teamsList, m.teamsList.id)
     m.userContentTask.unobserveField("output")
     m.userContentTask.control = "stop"
     m.userContentTask = invalid

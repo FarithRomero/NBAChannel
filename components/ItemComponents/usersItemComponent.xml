@@ -17,17 +17,22 @@
         horizAlignment="left"
         vertAlignment="top"
         visible= "true" >
-        <Poster 
+        <Poster
             id="userProfile">
             <label
                 id="userName"
                 color="0xE7F6F2"
                 translation= "[110,270]"/>
-            <Poster 
+            <Poster
                 id="dataUserProfile"
                 uri="pkg:/images/chooseProfile.png"
                 width="230"
                 height="130"
+                loadWidth="230"
+                loadHeight="130"
+                loadDisplayMode="scaleToFit"
+                loadingBitmapUri="pkg:/images/ballon.png"
+                failedBitmapUri="pkg:/images/ballon.png"
                 translation="[140, 370]"
                 opacity="0.3" />
         </Poster>

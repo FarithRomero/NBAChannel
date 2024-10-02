@@ -1,3 +1,5 @@
+import "pkg:/source/FocusHandler.bs"
+
 sub init()
     m.top.observeField("focusedChild", "focusHandler")
 
@@ -24,7 +26,7 @@ sub stopLoad()
 end sub
 
 sub focusHandler()
-    if m.top.hasFocus() then m.signUpButton.setFocus(true)
+    if m.top.hasFocus() then applyFocusTo(m.signUpButton, m.signUpButton.id)
 end sub
 
 

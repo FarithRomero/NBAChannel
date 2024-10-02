@@ -6,20 +6,8 @@
     <customization resumehandler="onMainScreenResume" />
 
     <script type="text/brightscript" uri="MainScreen.brs" />
-    <script type="text/brightscript" uri="pkg:/source/enumsContainer.bs" />
 
     <children>
-
-    <!-- 
-        <CustomizedKeyboard id = "TypeKeyboard" />
-        <CustomizedButton id = "okButton" visible= "false" />
-
-        </Group>
-        <Video
-            id="exampleVideo"
-            width="1920"
-            height="1080"
-            visible = "false"/> -->
         <CustomizedSpinner
             id="loadSpinner"/>
     </children>

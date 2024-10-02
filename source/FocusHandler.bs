@@ -1,0 +1,24 @@
+sub applyFocusTo(node as object, id as string)
+    if node <> invalid AND id <> invalid then node.setFocus(true)
+    saveNewEntryToFocusRegistry(id)
+end sub
+
+sub removeFocusTo(node as object, id as string)
+    if node <> invalid AND id <> invalid then node.setFocus(false)
+    saveNewEntryToFocusRegistry(id)
+end sub
+
+function getLastFocusedNode()
+    return m.global.focusRegistry.count() > 0 ? m.global.focusRegistry.Peek() : m.global.focusRegistry[0]
+end function
+
+function getAllFocusedNodes()
+    return m.global.focusRegistry
+end function
+
+sub saveNewEntryToFocusRegistry(id as string)
+    focusHistoricalRecord = m.global.focusRegistry
+    focusHistoricalRecord.push(id)
+
+    m.global.focusRegistry = focusHistoricalRecord
+end sub

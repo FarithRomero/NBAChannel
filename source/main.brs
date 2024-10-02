@@ -1,4 +1,5 @@
 sub Main()
+
     print "in showChannelSGScreen"
     screen = CreateObject("roSGScreen")
     m.port = CreateObject("roMessagePort")
@@ -6,7 +7,7 @@ sub Main()
     scene = screen.CreateScene("mainScreen")
     scene.backgroundColor= "0x000000"
     scene.backgroundUri = ""
-    screen.show() 
+    screen.show()
 
     while(true)
       msg = wait(0, m.port)

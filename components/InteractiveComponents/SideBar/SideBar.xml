@@ -6,7 +6,7 @@
     </interface>
 
     <script type="text/brightscript" uri="SideBar.bs"/>
-    <script type="text/brightscript" uri="pkg:/source/enumsContainer.bs" />
+    <script type="text/brightscript" uri="pkg:/source/EnumsContainer.bs" />
 
     <children>
         <Rectangle
