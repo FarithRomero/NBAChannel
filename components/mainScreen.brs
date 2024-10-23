@@ -8,10 +8,7 @@ sub init()
 end sub
 
 sub bindVariables()
-	m.top.focusRegistry = []
-
 	m.loadSpinner = m.top.findNode("loadSpinner")
-
 	setGlobalComponents()
 end sub
 
@@ -49,13 +46,13 @@ sub validateLoadStatus(screenSelector)
 	end if
 end sub
 
-function onMainScreenSuspend (arg as dynamic)
+sub onMainScreenSuspend (arg as dynamic)
 	for each key in arg
 		print "***** Suspending Channel *****" key "=" arg[key]
 	end for
-end function
+end sub
 
-function onMainScreenResume(arg as dynamic)
+sub onMainScreenResume(arg as dynamic)
 	for each key in arg
 			print "***** Resuming Channel *****" key "=" arg[key]
 	end for
@@ -68,4 +65,4 @@ function onMainScreenResume(arg as dynamic)
 	end if
 	myScene = m.top.getScene()
 	myScene.signalBeacon("AppResumeComplete")
-end function
+end sub

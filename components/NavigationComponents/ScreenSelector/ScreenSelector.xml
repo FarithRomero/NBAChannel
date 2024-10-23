@@ -11,6 +11,8 @@
     <script type="text/brightscript" uri="ScreenSelector.bs"/>
 
     <children >
-        <SideBar/>
+        <SideBar
+            id="sideBar"
+            visible= "false">
     </children>
 </component>

@@ -10,13 +10,13 @@ sub onHeightChanged()
     m.userProfile.height = m.top.height
 end sub
 
-sub onitemContentChanged()
+sub onItemContentChanged()
     m.userProfile.uri = m.top.itemContent.HDPOSTERURL
     m.userName.text = m.top.itemContent.title
 
-    if m.top.itemContent.drawPencilEdit = true then
+    if m.top.itemContent.drawPencilEdit = true
         m.dataUserProfile.opacity = 1
-    else if m.top.itemContent.drawPencilEdit = false then
+    else if m.top.itemContent.drawPencilEdit = false
         m.dataUserProfile.opacity = 0.3
     end if
 end sub 

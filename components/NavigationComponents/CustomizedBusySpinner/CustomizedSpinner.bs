@@ -16,7 +16,7 @@ end sub
 sub onLoadCompleted(event as object)
     isLoadCompleted = event.getData()
 
-    if isLoadCompleted = true then
+    if isLoadCompleted = true
         m.loadingIndicator.visible = false
         m.backGroundSpinner.visible = false
     end if

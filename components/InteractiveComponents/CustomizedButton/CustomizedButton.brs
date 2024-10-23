@@ -21,7 +21,7 @@ sub bindObservers()
 end sub
 
 sub onButtonFocusedChange()
-	if m.top.hasfocus() then m.top.isFocused = true
+	if m.top.hasFocus() then m.top.isFocused = true
 end sub
 
 sub onButtonSelectedChange()
@@ -29,14 +29,13 @@ sub onButtonSelectedChange()
 end sub
 
 sub dispatchAction()
-	?"El boton ha sido seleccionado"
 end sub
 
 function onKeyEvent(key as String, press as Boolean) as Boolean
 	handled = false
-	if press then
-		if (key = "OK") then
-			if m.top.hasfocus()
+	if press
+		if key = "OK"
+			if m.top.hasFocus()
 				m.top.isSelected = true
 			end if
 		end if

@@ -1,6 +1,6 @@
 enum SignUpScreen
     TITTLE = "CREATE YOUR ACCOUNT AND ENJOY OUR CONTENT"
-    TYC = "This channel just have academic porpuses and is non profit app"
+    TYC = "This channel just have academic purposes and is non profit app"
 end enum
 
 enum HomeScreenCopies
@@ -11,7 +11,7 @@ end enum
 
 enum ScreenNames
     HOME = "HomeScreen"
-    SIGNUP = "SignUpScreen"
+    SIGN_UP = "SignUpScreen"
 end enum
 
 

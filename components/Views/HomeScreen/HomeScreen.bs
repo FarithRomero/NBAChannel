@@ -32,7 +32,7 @@ sub onOutputChanged()
     m.teamsList = m.top.findNode("teamsList")
 	m.teamsList.content = m.userContentTask.output
     applyFocusTo(m.teamsList, m.teamsList.id)
-    m.userContentTask.unobserveField("output")
+    m.userContentTask.unObserveField("output")
     m.userContentTask.control = "stop"
     m.userContentTask = invalid
   end if

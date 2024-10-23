@@ -1,6 +1,19 @@
 import "pkg:/source/FocusHandler.bs"
+import "pkg:/source/EnumsContainer.bs"
 
 sub init()
+    setMainViewsMap()
+    bindComponents()
+end sub
+
+sub bindComponents()
+    m.sideBar = m.top.findNode("sideBar")
+end sub
+
+sub setMainViewsMap()
+    m.viewsMap = {}
+
+    m.viewsMap[ScreenNames.HOME] = ScreenNames.HOME
 end sub
 
 sub onViewDataChange()
@@ -14,6 +27,7 @@ sub onViewIdChange(event as object)
 
 	m.top.insertChild(screen, 1)
 
-    'ToDo: Pending focus handling
+    if m.viewsMap[screenId] <> invalid then m.sideBar.visible = true
+
     if screen.loadCompleted = true then m.top.loadCompleted = true
 end sub
