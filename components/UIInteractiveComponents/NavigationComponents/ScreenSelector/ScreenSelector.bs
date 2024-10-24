@@ -23,6 +23,7 @@ sub onViewIdChange(event as object)
     screenId = event.getData()
 	screen = m.top.createChild(screenId)
     screen.id = screenId
+
     applyFocusTo(screen, screen.id)
 
 	m.top.insertChild(screen, 1)

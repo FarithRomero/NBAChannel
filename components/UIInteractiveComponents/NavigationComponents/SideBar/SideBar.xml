@@ -11,7 +11,7 @@
     <children>
         <Rectangle
             id="sideBarBackground"
-            width="143"
+            width="123"
             height="1080"
             color="0x02080D"
             translation="[0,0]"/>

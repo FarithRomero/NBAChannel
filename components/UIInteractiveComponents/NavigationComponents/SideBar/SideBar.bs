@@ -12,4 +12,5 @@ sub bindSettings()
     logosWidth = 20
 
     m.tabLogosLayout.translation=[(m.sideBarBackground.width / 2) - (logosWidth / 2) ,329]
+    
 end sub
