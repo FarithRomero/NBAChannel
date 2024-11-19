@@ -35,8 +35,8 @@ function onKeyEvent(key as String, press as Boolean) as Boolean
 	handled = false
 	if press
 		if key = "OK"
-			if m.top.hasFocus()
-				m.top.isSelected = true
+			if m.top.isInFocusChain()
+				? "FOCO ENCONTRADO"
 			end if
 		end if
 		handled = true

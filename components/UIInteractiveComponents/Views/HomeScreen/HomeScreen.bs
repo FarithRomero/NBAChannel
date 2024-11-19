@@ -3,7 +3,7 @@ import "pkg:/source/FocusHandler.bs"
 sub init()
     bindVariables()
     bindCopies()
-    createUserContentTask()
+    ' createUserContentTask()
 end sub
 
 sub bindVariables()
@@ -21,19 +21,19 @@ sub stopLoad()
     m.top.loadCompleted = true
 end sub
 
-sub createUserContentTask()
-    m.userContentTask = CreateObject("roSGNode", "usersContentTask")
-    m.userContentTask.url = "https://api-nba-v1.p.rapidapi.com/teams"
-    m.userContentTask.observeField("output", "onOutputChanged")
-    m.userContentTask.control = "RUN"
-end sub
+' sub createUserContentTask()
+'     m.userContentTask = CreateObject("roSGNode", "usersContentTask")
+'     m.userContentTask.url = "https://api-nba-v1.p.rapidapi.com/teams"
+'     m.userContentTask.observeField("output", "onOutputChanged")
+'     m.userContentTask.control = "RUN"
+' end sub
 
-sub onOutputChanged()
-    m.teamsList = m.top.findNode("teamsList")
-	m.teamsList.content = m.userContentTask.output
-    applyFocusTo(m.teamsList, m.teamsList.id)
-    m.userContentTask.unObserveField("output")
-    m.userContentTask.control = "stop"
-    m.userContentTask = invalid
-  end if
-end sub
+' sub onOutputChanged()
+'     m.teamsList = m.top.findNode("teamsList")
+' 	m.teamsList.content = m.userContentTask.output
+'     applyFocusTo(m.teamsList, m.teamsList.id)
+'     m.userContentTask.unObserveField("output")
+'     m.userContentTask.control = "stop"
+'     m.userContentTask = invalid
+'   end if
+' end sub

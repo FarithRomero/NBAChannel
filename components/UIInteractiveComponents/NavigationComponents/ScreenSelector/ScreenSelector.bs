@@ -32,3 +32,18 @@ sub onViewIdChange(event as object)
 
     if screen.loadCompleted = true then m.top.loadCompleted = true
 end sub
+
+sub navigateTo(location as string, params as object, appendToStack as boolean, saveInCache as boolean)
+
+	screen = m.top.createChild(location)
+    screen.id = location
+
+    applyFocusTo(screen, screen.id)
+
+	m.top.insertChild(screen, 1)
+
+    if m.viewsMap[screenId] <> invalid then m.sideBar.visible = true
+
+    if screen.loadCompleted = true then m.top.loadCompleted = true
+
+end sub

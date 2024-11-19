@@ -4,13 +4,14 @@ sub init()
 end sub
 
 sub bindVariables()
-    m.sideBarBackground = m.top.findNode("sideBarBackground")
-    m.tabLogosLayout = m.top.findNode("tabLogosLayout")
+    m.sideBarBackground     = m.top.findNode("sideBarBackground")
+    m.tabLogosLayout        = m.top.findNode("tabLogosLayout")
+    m.sideBarList           = m.top.findNode("sideBarList")
 end sub
 
 sub bindSettings()
     logosWidth = 20
 
-    m.tabLogosLayout.translation=[(m.sideBarBackground.width / 2) - (logosWidth / 2) ,329]
-    
+    m.sideBarList.content = CreateObject("roSGNode", "logosContentComponent")
+    m.sideBarList.translation = [(30) ,329]
 end sub

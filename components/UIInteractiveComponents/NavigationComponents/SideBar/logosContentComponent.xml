@@ -1,0 +1,24 @@
+<?xml version = "1.0" encoding = "utf-8" ?>
+
+<component name = "logosContentComponent" extends = "ContentNode" >
+
+  <children >
+
+    <ContentNode
+      title = "HOME"
+      HDPosterUrl = "pkg:/images/homeLogoUnfocused.png" />
+
+    <ContentNode
+      title = "DATES"
+      HDPosterUrl = "pkg:/images/scheduleLogoUnfocused.png" />
+
+    <ContentNode
+      title = "TEAMS"
+      HDPosterUrl = "pkg:/images/teamsLogoUnfocused.png" />
+
+    <ContentNode
+      title = "SETTINGS"
+      HDPosterUrl = "pkg:/images/settingsLogoUnfocused.png" />
+  </children>
+
+</component>

@@ -39,7 +39,7 @@
             id="watchNowButton"
             translation="[200,740]"
             buttonBackground="pkg:/images/FocussedButton.png"/>
-        <CustomizedRowlist
+        <!-- <CustomizedRowlist
             id="teamsList"
             itemComponentName = "usersItemComponent"
             itemSize="[1490, 130]"
@@ -48,6 +48,6 @@
             rowItemSpacing="[[180]]"
             translation="[200,940]"
             focusBitmapUri= "pkg:/images/focus_grid.9.png"
-            visible="true"/>
+            visible="true"/> -->
     </children>
 </component>

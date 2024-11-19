@@ -1,9 +1,9 @@
 import "pkg:/source/FocusHandler.bs"
 
 sub init()
-    bindObservers()
     bindVariables()
     bindStyles()
+    bindObservers()
 end sub
 
 sub bindObservers()
@@ -21,6 +21,7 @@ sub bindStyles()
     m.title.text = SignUpScreen.TITTLE
     m.tyC.text = SignUpScreen.TYC
 
+    applyFocusTo(m.signUpButton, m.signUpButton.id)
     stopLoad()
 end sub
 
@@ -29,18 +30,18 @@ sub stopLoad()
 end sub
 
 sub onFocusChildChange()
-    if m.top.hasFocus() then applyFocusTo(m.signUpButton, m.signUpButton.id)
+    getAllFocusedNodes()
 end sub
 
 function onKeyEvent(key as String, press as Boolean) as Boolean
-    handled = false
-
-    if press
-        ? "component has focus"
-    end if
-
-    return handled
+	handled = false
+	if press
+		if key = "OK"
+			if m.signUpButton.isInFocusChain()
+				? "FOCO ENCONTRADO"
+			end if
+		end if
+		handled = true
+	end if
+	return handled
 end function
-
-
-

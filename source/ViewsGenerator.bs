@@ -1,0 +1,17 @@
+function createNewView(viewId as string, parentNode as object )
+	newScreen = m.top.createChild("ScreenSelector")
+	newScreen.id = "ScreenSelector"
+	newScreen.viewId = viewId
+
+	parentNode.insertChild(newScreen, 1)
+
+	if parentNode.isInFocusChain() then applyFocusTo(newScreen, viewId)
+
+	validateLoadStatus(newScreen)
+end function
+
+sub validateLoadStatus(newScreen)
+	if newScreen <> invalid
+		if newScreen.loadCompleted = true then m.loadSpinner.isLoadCompleted = true
+	end if
+end sub

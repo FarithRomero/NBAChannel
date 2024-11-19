@@ -13,7 +13,7 @@ function getLastFocusedNode()
 end function
 
 function getAllFocusedNodes()
-    return m.global.focusRegistry
+    ? "****** Total focused nodes : "; m.global.focusRegistry; " ******"
 end function
 
 sub saveNewEntryToFocusRegistry(id as string)

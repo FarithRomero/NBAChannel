@@ -1,0 +1,10 @@
+sub init()
+    m.homeLogoPoster = m.top.findNode("homeLogoPoster")
+    m.itemLabel = m.top.findNode("itemLabel")
+    m.focusedPoster = m.top.findNode("focusedPoster")
+end sub
+
+function itemContentChanged()
+    m.homeLogoPoster.uri = m.top.itemContent.HDPOSTERURL
+    m.itemLabel.text = m.top.itemContent.TITLE
+  end function

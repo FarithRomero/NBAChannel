@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<component name="sideBarItemComponent" extends="Group">
+
+    <interface>
+        <field id="itemContent" type="node" onChange="itemContentChanged"/>
+    </interface>
+
+    <script type="text/brightscript" uri="sideBarItemComponent.bs"/>
+
+    <children>
+   <LayoutGroup
+        id="tabLogosLayout"
+        layoutDirection="horiz"
+        horizAlignment="left"
+        itemSpacings="[8]">
+        <Poster
+            id="homeLogoPoster"
+            width="23"/>
+        <Label
+            id = "itemLabel"
+            color="#e5be01"
+            vertAlign = "top"
+            horizAlign = "left" >
+            <Font
+                role="font"
+                uri="pkg:/fonts/Oswald-Regular.ttf"
+                size="14" />
+        </Label>
+    </LayoutGroup>
+    </children>
+</component>

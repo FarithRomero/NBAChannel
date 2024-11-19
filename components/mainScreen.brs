@@ -1,5 +1,6 @@
 import "pkg:/source/EnumsContainer.bs"
 import "pkg:/source/FocusHandler.bs"
+import "pkg:/source/ViewsGenerator.bs"
 
 sub init()
 	bindVariables()
@@ -19,31 +20,12 @@ sub setGlobalComponents()
 end sub
 
 sub initApp()
-	m.global.viewSelected = ScreenNames.HOME
+	createNewView(ScreenNames.HOME, m.top)
+	getAllFocusedNodes()
 end sub
 
 sub bindObservers()
 	m.global.observeField("viewSelected", "onViewSelected")
-end sub
-
-sub onViewSelected(event as object)
-	viewSelected = event.getData()
-
-	screenSelector = m.top.createChild("ScreenSelector")
-	screenSelector.id = "ScreenSelector"
-	screenSelector.viewId = viewSelected
-
-	applyFocusTo(screenSelector, viewSelected)
-
-	m.top.insertChild(screenSelector, 1)
-
-	validateLoadStatus(screenSelector)
-end sub
-
-sub validateLoadStatus(screenSelector)
-	if screenSelector <> invalid
-		if screenSelector.loadCompleted = true then m.loadSpinner.isLoadCompleted = true
-	end if
 end sub
 
 sub onMainScreenSuspend (arg as dynamic)
