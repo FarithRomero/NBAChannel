@@ -1,0 +1,26 @@
+' ***********************************************************************
+'  [#0] MAIN ENTRY POINT
+' ***********************************************************************
+
+sub init()
+    initVariables()
+end sub
+
+' ***********************************************************************
+' [#1]: VARIABLES
+' ***********************************************************************
+
+sub initVariables()
+    m.homeLogoPoster    = m.top.findNode("homeLogoPoster")
+    m.itemLabel         = m.top.findNode("itemLabel")
+    m.focusedPoster     = m.top.findNode("focusedPoster")
+end sub
+
+' ***********************************************************************
+' [#2]: OBSERVERS
+' ***********************************************************************
+
+function itemContentChanged()
+    m.homeLogoPoster.uri    = m.top.itemContent.HDPOSTERURL
+    m.itemLabel.text        = m.top.itemContent.TITLE
+  end function

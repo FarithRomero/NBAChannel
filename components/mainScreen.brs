@@ -1,14 +1,27 @@
+' ***********************************************************************
+' IMPORTS
+' ***********************************************************************
+
 import "pkg:/source/EnumsContainer.bs"
 import "pkg:/source/FocusHandler.bs"
 import "pkg:/source/ViewsGenerator.bs"
 
+' ***********************************************************************
+'  [#0] MAIN ENTRY POINT
+' ***********************************************************************
+
 sub init()
-	bindVariables()
-	bindObservers()
+	initVariables()
+	initObservers()
+
 	initApp()
 end sub
 
-sub bindVariables()
+' ***********************************************************************
+' [#1]: VARIABLES
+' ***********************************************************************
+
+sub initVariables()
 	m.loadSpinner = m.top.findNode("loadSpinner")
 	setGlobalComponents()
 end sub
@@ -19,12 +32,11 @@ sub setGlobalComponents()
 	m.global.focusRegistry = ["MainScene"]
 end sub
 
-sub initApp()
-	createNewView(ScreenNames.HOME, m.top)
-	getAllFocusedNodes()
-end sub
+' ***********************************************************************
+' [#2]: OBSERVERS
+' ***********************************************************************
 
-sub bindObservers()
+sub initObservers()
 	m.global.observeField("viewSelected", "onViewSelected")
 end sub
 
@@ -48,3 +60,13 @@ sub onMainScreenResume(arg as dynamic)
 	myScene = m.top.getScene()
 	myScene.signalBeacon("AppResumeComplete")
 end sub
+
+' ***********************************************************************
+' [#3]: SETUPS
+' ***********************************************************************
+
+sub initApp()
+	createNewView(ScreenNames.HOME, m.top)
+	getAllFocusedNodes()
+end sub
+

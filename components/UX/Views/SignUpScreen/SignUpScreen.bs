@@ -1,0 +1,72 @@
+' ***********************************************************************
+' IMPORTS
+' ***********************************************************************
+
+import "pkg:/source/FocusHandler.bs"
+
+' ***********************************************************************
+'  [#0] MAIN ENTRY POINT
+' ***********************************************************************
+
+sub init()
+    initVariables()
+    initObservers()
+    initStyles()
+end sub
+
+' ***********************************************************************
+' [#1]: VARIABLES
+' ***********************************************************************
+
+sub initVariables()
+    m.title         = m.top.findNode("title")
+    m.tyC           = m.top.findNode("tyC")
+    m.signUpButton  = m.top.findNode("signUpButton")
+    m.skipButton    = m.top.findNode("skipButton")
+end sub
+
+' ***********************************************************************
+' [#2]: OBSERVERS
+' ***********************************************************************
+
+sub initObservers()
+    m.top.observeField("focusedChild", "onFocusChildChange")
+end sub
+
+' ***********************************************************************
+' [#5]: STYLES
+' ***********************************************************************
+
+sub initStyles()
+    m.title.text    = SignUpScreen.TITTLE
+    m.tyC.text      = SignUpScreen.TYC
+
+    applyFocusTo(m.signUpButton, m.signUpButton.id)
+
+    stopLoad()
+end sub
+
+' ***********************************************************************
+' [#4]: EVENTS
+' ***********************************************************************
+
+sub stopLoad()
+    m.top.loadCompleted = true
+end sub
+
+sub onFocusChildChange()
+    getAllFocusedNodes()
+end sub
+
+function onKeyEvent(key as String, press as Boolean) as Boolean
+	handled = false
+	if press
+		if key = "OK"
+			if m.signUpButton.isInFocusChain()
+				? "FOCO ENCONTRADO"
+			end if
+		end if
+		handled = true
+	end if
+	return handled
+end function

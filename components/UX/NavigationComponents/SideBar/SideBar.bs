@@ -1,0 +1,29 @@
+' ***********************************************************************
+'  [#0] MAIN ENTRY POINT
+' ***********************************************************************
+
+sub init()
+    initVariables()
+    initSettings()
+end sub
+
+' ***********************************************************************
+' [#1]: VARIABLES
+' ***********************************************************************
+
+sub initVariables()
+    m.sideBarBackground     = m.top.findNode("sideBarBackground")
+    m.tabLogosLayout        = m.top.findNode("tabLogosLayout")
+    m.sideBarList           = m.top.findNode("sideBarList")
+end sub
+
+' ***********************************************************************
+' [#3]: SETUPS
+' ***********************************************************************
+
+sub initSettings()
+    logosWidth = 20
+
+    m.sideBarList.content       = CreateObject("roSGNode", "logosContentComponent")
+    m.sideBarList.translation   = [(30) ,329]
+end sub
