@@ -1,12 +1,12 @@
-' ***********************************************************************
+' '***********************
 ' IMPORTS
-' ***********************************************************************
+' '***********************
 
 import "pkg:/source/FocusHandler.bs"
 
-' ***********************************************************************
+' '***********************
 '  [#0] MAIN ENTRY POINT
-' ***********************************************************************
+' '***********************
 
 sub init()
     initVariables()
@@ -14,32 +14,43 @@ sub init()
     ' createUserContentTask()
 end sub
 
-' ***********************************************************************
+' '***********************
 ' [#1]: VARIABLES
-' ***********************************************************************
+' '***********************
 
 sub initVariables()
     m.homeHeaderText = m.top.findNode("homeHeaderText")
     m.watchNowButton = m.top.findNode("watchNowButton")
 end sub
 
-' ***********************************************************************
+' '***********************
+' [#2]: OBSERVERS
+' '***********************
+
+sub initObservers()
+    m.top.observeField("focusedChild", "onFocusedChildChange")
+end sub
+
+' '***********************
+' [#4]: EVENTS
+' '***********************
+
+sub stopLoad()
+    m.top.loadCompleted = true
+end sub
+
+sub onFocusedChildChange(event as object)
+    if m.top.hasFocus() then ? "El componente recibío el foco"
+end sub
+' '***********************
 ' [#5]: STYLES
-' ***********************************************************************
+' '***********************
 
 sub initStyles()
     m.homeHeaderText.text       = HomeScreenCopies.HEADER_TEXT
     m.watchNowButton.textButton = HomeScreenCopies.WATCH_NOW
 
     stopLoad()
-end sub
-
-' ***********************************************************************
-' [#4]: EVENTS
-' ***********************************************************************
-
-sub stopLoad()
-    m.top.loadCompleted = true
 end sub
 
 ' sub createUserContentTask()
