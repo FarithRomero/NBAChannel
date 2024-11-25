@@ -4,7 +4,7 @@
     <interface>
         <field id="textButton" type="string" alias="buttonLabel.text" />
         <field id="buttonBackground" type="string" alias="buttonBackground.uri" />
-        <field id="isFocused" type="boolean"/>
+        <field id="isFocused" type="boolean" onChange="onButtonFocusedChange" alwaysNotify="true"/>
         <field id="isSelected" type="boolean"/>
     </interface>
 

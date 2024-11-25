@@ -1,11 +1,17 @@
-sub applyFocusTo(node as object, id as string)
-    if node <> invalid AND id <> invalid then node.setFocus(true)
+import "pkg:/source/ValidationUtils.bs"
+
+sub applyFocusTo(node as object, id as string, parentNode = {} as object)
+    removeFocusTo(parentNode, id)
+
+    if (Validate.assocArrayNotEmpty(node) or Validate.isSGNode(node)) AND Validate.stringNotEmpty(id) then node.setFocus(true)
+    print "****** Applied focus to : "; id; " ******"
+
     saveNewEntryToFocusRegistry(id)
 end sub
 
 sub removeFocusTo(node as object, id as string)
-    if node <> invalid AND id <> invalid then node.setFocus(false)
-    saveNewEntryToFocusRegistry(id)
+    if (Validate.assocArrayNotEmpty(node) or Validate.isSGNode(node)) AND Validate.stringNotEmpty(id) then node.setFocus(false)
+    print "****** Removed focus to : "; id; " ******"
 end sub
 
 function getLastFocusedNode()
@@ -13,7 +19,7 @@ function getLastFocusedNode()
 end function
 
 function getAllFocusedNodes()
-    ? "****** Total focused nodes : "; m.global.focusRegistry; " ******"
+    print "****** Total focused nodes : "; m.global.focusRegistry; " ******"
 end function
 
 sub saveNewEntryToFocusRegistry(id as string)

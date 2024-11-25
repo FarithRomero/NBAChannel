@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<component name="ViewsContainer" extends="Group">
+
+    <interface>
+        <field id="viewData"        type="assocarray"   onChange="onViewDataChange"/>
+        <field id="tabId"           type="string"       onChange="onTabIdChange"/>
+        <field id="loadCompleted"   type="boolean"/>
+    </interface>
+
+    <script type="text/brightscript" uri="ViewsContainer.bs"/>
+
+    <children>
+        <SideBar
+            id="customizedSideBar"
+            visible= "false"/>
+    </children>
+</component>

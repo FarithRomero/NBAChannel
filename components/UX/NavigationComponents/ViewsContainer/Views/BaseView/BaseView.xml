@@ -9,7 +9,7 @@
     <script type="text/brightscript" uri="BaseView.bs" />
     <script type="text/brightscript" uri="pkg:/source/imageUtils.bs" />
     <script type="text/brightscript" uri="pkg:/source/FocusHandler.bs" />
-    <script type="text/brightscript" uri="pkg:/components/UX/NavigationComponents/ScreenSelector/ScreenSelector.bs"/>
+    <script type="text/brightscript" uri="pkg:/components/UX/NavigationComponents/ViewsContainer/ViewsContainer.bs"/>
 
     <children >
     </children>

@@ -41,7 +41,7 @@ sub initStyles()
     m.title.text    = SignUpScreen.TITTLE
     m.tyC.text      = SignUpScreen.TYC
 
-    applyFocusTo(m.signUpButton, m.signUpButton.id)
+    ' applyFocusTo(m.signUpButton, m.signUpButton.id)
 
     stopLoad()
 end sub

@@ -1,0 +1,6 @@
+' Disappears the charging indicator once this process has finished.
+sub validateLoadStatus(screen as object, loadingIndicator as object)
+	if screen <> invalid
+		if screen.loadCompleted = true then loadingIndicator.isLoadCompleted = true
+	end if
+end sub

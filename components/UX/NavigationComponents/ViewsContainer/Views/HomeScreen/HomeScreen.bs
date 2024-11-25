@@ -11,6 +11,7 @@ import "pkg:/source/FocusHandler.bs"
 sub init()
     initVariables()
     initStyles()
+    initObservers()
     ' createUserContentTask()
 end sub
 
@@ -40,8 +41,9 @@ sub stopLoad()
 end sub
 
 sub onFocusedChildChange(event as object)
-    if m.top.hasFocus() then ? "El componente recibío el foco"
+    if m.top.hasFocus() then m.watchNowButton.setFocus(true)
 end sub
+
 ' '***********************
 ' [#5]: STYLES
 ' '***********************
@@ -69,3 +71,26 @@ end sub
 '     m.userContentTask = invalid
 '   end if
 ' end sub
+
+function onKeyEvent(key as String, press as Boolean) as Boolean
+	handled = false
+
+	if press
+		if key = "OK"
+			if m.watchNowButton.isInFocusChain()
+				m.watchNowButton.isFocused = true
+			end if
+        else if key = "down"
+            if m.watchNowButton.isInFocusChain()
+                m.watchNowButton.isFocused = false
+			end if
+        else if key = "up"
+            if m.top.isInFocusChain()
+                m.watchNowButton.setFocus(true)
+                m.watchNowButton.isFocused = true
+			end if
+		end if
+		handled = true
+	end if
+	return handled
+end function

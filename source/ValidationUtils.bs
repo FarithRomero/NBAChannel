@@ -1,0 +1,29 @@
+namespace Validate
+    function validAssocArray(datum as object) as boolean
+        return datum = invalid or type(datum) <> "ifAssociativeArray"
+    end function
+
+    function assocArrayEmpty(datum as object) as boolean
+        return datum <> invalid and type(datum) = "ifAssociativeArray" and datum.count() = 0
+    end function
+
+    function assocArrayNotEmpty(datum as object) as boolean
+        return datum <> invalid and type(datum) = "ifAssociativeArray" and datum.count() > 0
+    end function
+
+    function isSGNode(datum as object) as boolean
+        return datum <> invalid and type(datum) = "roSGNode"
+    end function
+
+    function validString(datum as string) as boolean
+        return datum <> invalid and type(datum) = "String"
+    end function
+
+    function stringEmpty(datum as string) as boolean
+        return datum <> invalid and type(datum) = "String" and datum = ""
+    end function
+
+    function stringNotEmpty(datum as string) as boolean
+        return datum <> invalid and type(datum) = "String" and datum <> ""
+    end function
+end namespace

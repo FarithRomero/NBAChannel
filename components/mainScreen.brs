@@ -5,6 +5,7 @@
 import "pkg:/source/EnumsContainer.bs"
 import "pkg:/source/FocusHandler.bs"
 import "pkg:/source/ViewsGenerator.bs"
+import "pkg:/source/ValidationUtils.bs"
 
 ' '***********************
 '  [#0] MAIN ENTRY POINT
@@ -40,6 +41,18 @@ sub initObservers()
 	m.global.observeField("viewSelected", "onViewSelected")
 end sub
 
+' '***********************
+' [#3]: SETUPS
+' '***********************
+
+sub initApp()
+	openTab(ScreenNames.HOME, m.top)
+end sub
+
+' '***********************
+' [#4]: EVENTS
+' '***********************
+
 sub onMainScreenSuspend (arg as dynamic)
 	for each key in arg
 		print "***** Suspending Channel *****" key "=" arg[key]
@@ -59,13 +72,4 @@ sub onMainScreenResume(arg as dynamic)
 	end if
 	myScene = m.top.getScene()
 	myScene.signalBeacon("AppResumeComplete")
-end sub
-
-' '***********************
-' [#3]: SETUPS
-' '***********************
-
-sub initApp()
-	createNewView(ScreenNames.HOME, m.top)
-	getAllFocusedNodes()
 end sub

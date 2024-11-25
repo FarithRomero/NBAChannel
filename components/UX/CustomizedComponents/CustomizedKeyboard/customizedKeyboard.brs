@@ -42,10 +42,10 @@ function onKeyEvent(key as String, press as Boolean) as Boolean
     handled = false
         if press
             if key = "OK" AND m.top.textEditBox.hasFocus()
-                applyFocusTo(m.top, m.top.id)
+                ' applyFocusTo(m.top, m.top.id)
                 handled=true
             else if key = "back"
-                applyFocusTo(m.top.textEditBox,  m.top.textEditBox.id)
+                ' applyFocusTo(m.top.textEditBox,  m.top.textEditBox.id)
                 m.keyboard.visible=false
                 m.top.showRectangle = m.keyboard.visible
                 handled = true

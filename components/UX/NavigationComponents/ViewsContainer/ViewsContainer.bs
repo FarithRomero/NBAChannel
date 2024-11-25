@@ -1,0 +1,77 @@
+' '***********************
+' IMPORTS
+' '***********************
+
+import "pkg:/source/FocusHandler.bs"
+import "pkg:/source/EnumsContainer.bs"
+
+' '***********************
+'  [#0] MAIN ENTRY POINT
+' '***********************
+
+sub init()
+    initVariables()
+    setMainViewsMap()
+    initObservers()
+end sub
+
+' '***********************
+' [#1]: VARIABLES
+' '***********************
+
+sub initVariables()
+    m.customizedSideBar = m.top.findNode("customizedSideBar")
+end sub
+
+'This map should includes exclusively the main tabs
+sub setMainViewsMap()
+    m.viewsMap = {}
+
+    m.viewsMap[ScreenNames.HOME] = ScreenNames.HOME
+end sub
+
+' '***********************
+' [#2]: OBSERVERS
+' '***********************
+
+sub initObservers()
+    m.top.observeField("focusedChild","onFocusedChildChange")
+end sub
+
+' '***********************
+' [#3]: SETUPS
+' '***********************
+
+function createNewView(newScreenId as string)
+    newScreen = m.top.createChild(newScreenId)
+    newScreen.id = newScreenId
+
+    return newScreen
+end function
+
+' '***********************
+' [#4]: EVENTS
+' '***********************
+
+sub onViewDataChange()
+end sub
+
+sub onTabIdChange(event as object)
+    event = event.getData()
+
+    newScreenId = Validate.stringNotEmpty(event) ? event : ScreenNames.SIGN_UP
+    m.newScreen   = createNewView(newScreenId)
+
+    m.top.insertChild(m.newScreen, 1)
+
+    if m.viewsMap[newScreenId] <> invalid   then m.customizedSideBar.visible = true
+    if m.newScreen.loadCompleted = true     then m.top.loadCompleted = true
+
+    if m.top.hasFocus() and m.customizedSideBar.visible = true then m.customizedSideBar.setFocus(true)
+end sub
+
+sub onFocusedChildChange(event as object)
+    if m.top.hasFocus()
+        m.newScreen.setFocus(true)
+    end if
+end sub
